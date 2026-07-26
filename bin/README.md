@@ -23,6 +23,15 @@ The application can be tested via the Swagger UI:
 http://localhost:8081/swagger-ui/index.html
 
 
+There is also a screen recording here:
+
+https://www.dropbox.com/scl/fi/wa63k6rtd1plqsyy0dd33/screen-recording.mov?rlkey=lzgtc8y4dbpo4oh6ox3is65mb&st=2bmz27qe&dl=0
+
+
+
+
+
+
 ## Postman collection
 A Postman collection to test the APIs can also be found here:
 

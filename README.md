@@ -8,11 +8,15 @@ The functionality is based on the requirements in this assignment.
 To run the application locally without the need to install dependencies or a JRE cd to the ./bin directory and follow 
 the instructions found here:
 
-[README.md](bin/README.md)
+[How to run the api](bin/README.md)
 
 
-## Screen Recording of the Functionality
+Screen Recording of the Functionality:
+https://www.dropbox.com/scl/fi/wa63k6rtd1plqsyy0dd33/screen-recording.mov?rlkey=lzgtc8y4dbpo4oh6ox3is65mb&st=2bmz27qe&dl=0
 
+
+Postman collection is available here:
+[postman-collection.json](docs/postman-collection.json)
 
 
 ## Tech Stack
