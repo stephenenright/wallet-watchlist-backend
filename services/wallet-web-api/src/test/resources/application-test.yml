@@ -1,0 +1,21 @@
+app:
+  database:
+    type: postgres
+
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Validate the entity mappings against the Flyway-migrated schema, exactly as
+      # the app does against the real database.
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    # SQL migrations are contributed by the data:walletwatchlist-database-migrate module.
+    locations: classpath:db/migration/main/master
+  # The datasource is supplied at runtime by the Testcontainers PostgreSQL container
+  # via @ServiceConnection (see TestcontainersConfiguration).

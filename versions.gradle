@@ -1,0 +1,50 @@
+ext.versions=[
+	groovy: '4.0.21',
+	hibernate: [
+		core: "6.6.53.Final"
+	],
+	modelmapper: [
+		modelmapper: '2.4.2'
+	],
+	jackson: '2.15.3',   //spring boot
+	javax: [
+		validations: '2.0.1.Final',
+		inject: "1"
+	],
+	lombok: "1.18.30",
+	mapStruct: "1.6.3",
+	springdoc: "2.7.0",
+	postgres: [
+		driver: '42.3.3'
+	],
+	// Local development database. H2 runs from a file on disk (PostgreSQL
+	// compatibility mode) so day-to-day development needs no Docker. CI and the
+	// integration tests still run against real Postgres -- see docs/development.
+	h2: [
+		driver: '2.3.232'
+	],
+	spock: [
+		spock: '2.4-groovy-4.0'
+	],
+	flyway: [
+		// Used by the web-api integration tests via Spring Boot autoconfiguration,
+		// so it must stay on the version Boot 3.5.16 manages/supports.
+		core: '11.7.2',
+		// Standalone Flyway Gradle plugin for the data:walletwatchlist-database-migrate
+		// module (not tied to Spring Boot). Keep in sync with the literal plugin id
+		// version in that module's build.gradle.
+		plugin: '13.0.0'
+	],
+	testcontainers: [
+		testcontainers: '1.21.4'
+	],
+	uuid: [
+		generator: '5.1.0'
+	],
+	springBoot: [
+		version: "3.5.16",
+		jpaStarter: "3.5.16",
+		test: "3.5.16"
+	]
+]
+

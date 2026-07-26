@@ -1,0 +1,23 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+		mavenCentral()
+	}
+	// configure plugin versions
+	plugins {
+		id("com.diffplug.gradle.spotless") version "7.0.2"
+	}
+}
+
+rootProject.name = 'wallet-watchlist-backend'
+
+// For Sub projects
+dependencyResolutionManagement {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+}
+
+include 'data:walletwatchlist-database-migrate'
+include 'services:wallet-web-api'

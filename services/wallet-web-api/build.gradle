@@ -1,0 +1,112 @@
+plugins {
+    id 'java-library'
+    id 'groovy'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:${versions.springBoot.version}",
+            "org.springframework.boot:spring-boot-starter-validation:${versions.springBoot.version}",
+            "org.springframework.boot:spring-boot-starter-data-jpa:${versions.springBoot.jpaStarter}",
+            "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${versions.jackson}",
+            "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${versions.jackson}",
+            "org.postgresql:postgresql:${versions.postgres.driver}",
+            "com.fasterxml.uuid:java-uuid-generator:${versions.uuid.generator}"
+
+    // Local development runs against an H2 file database (PostgreSQL mode) so no
+    // Docker daemon is required. Postgres stays on the compile path because it is
+    // what CI, the integration tests, and every deployed environment use.
+    runtimeOnly "com.h2database:h2:${versions.h2.driver}"
+
+    // Flyway runs migrations at application startup. The migration SQL files come
+    // from the database-migrate module (on the classpath as resources).
+    implementation "org.flywaydb:flyway-core:${versions.flyway.core}"
+    runtimeOnly "org.flywaydb:flyway-database-postgresql:${versions.flyway.core}",
+            project(":data:walletwatchlist-database-migrate")
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${versions.springBoot.version}",
+            "org.springframework.boot:spring-boot-testcontainers:${versions.springBoot.version}",
+            "org.testcontainers:postgresql:${versions.testcontainers.testcontainers}",
+            "org.spockframework:spock-spring:${versions.spock.spock}",
+            "org.apache.groovy:groovy:${versions.groovy}",
+            "org.spockframework:spock-core:${versions.spock.spock}",
+            "org.spockframework:spock-junit4:${versions.spock.spock}",
+            "org.junit.platform:junit-platform-launcher"
+
+    compileOnly "org.projectlombok:lombok:${versions.lombok}"
+    annotationProcessor "org.projectlombok:lombok:${versions.lombok}"
+
+    implementation "org.mapstruct:mapstruct:${versions.mapStruct}",
+            "org.springdoc:springdoc-openapi-starter-webmvc-ui:${versions.springdoc}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${versions.mapStruct}"
+    annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+
+    testCompileOnly "org.projectlombok:lombok:${versions.lombok}"
+    testAnnotationProcessor "org.projectlombok:lombok:${versions.lombok}"
+}
+
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+def distDir = rootProject.file("bin")
+def jreDir = layout.buildDirectory.dir("jre")
+
+tasks.register('createJre', Exec) {
+    description = 'Creates a minimal JRE using jlink'
+    group = 'distribution'
+
+    def javaHome = System.getProperty('java.home')
+    def jmodsPath = file("${javaHome}/jmods")
+
+    inputs.property('javaHome', javaHome)
+    outputs.dir(jreDir)
+
+    doFirst {
+        delete(jreDir)
+    }
+
+    commandLine 'jlink',
+            '--module-path', jmodsPath.absolutePath,
+            '--add-modules', 'java.base,java.logging,java.naming,java.desktop,java.management,java.security.jgss,java.instrument,java.sql,jdk.unsupported,jdk.crypto.ec',
+            '--strip-debug',
+            '--compress', '2',
+            '--no-header-files',
+            '--no-man-pages',
+            '--output', jreDir.get().asFile.absolutePath
+}
+
+tasks.register('packageDist', Copy) {
+    description = 'Packages the fat JAR with a minimal JRE into a distributable bundle'
+    group = 'distribution'
+    dependsOn bootJar, createJre
+
+    from(tasks.bootJar.archiveFile) {
+        rename { 'app.jar' }
+    }
+    from(jreDir) {
+        into 'jre'
+    }
+    from('src/dist') {
+        include '*.sh'
+        include '*.bat'
+        fileMode 0755
+    }
+
+    into distDir
+}
+
+tasks.register('dist') {
+    description = 'Builds the complete distribution package'
+    group = 'distribution'
+    dependsOn packageDist
+
+    doLast {
+        println "Distribution created at: ${distDir.absolutePath}"
+    }
+}

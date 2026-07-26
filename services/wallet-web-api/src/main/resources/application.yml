@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+springdoc:
+  model-converters:
+    pageable-converter:
+      enabled: false
+
+app:
+  database:
+    type: h2 # h2 or postgres
+    h2:
+      url: jdbc:h2:file:./bin/walletwatchlist;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+      username: sa
+      password:
+      driver-class-name: org.h2.Driver
+    postgres:
+      url: jdbc:postgresql://localhost:5450/walletwatchlist
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true

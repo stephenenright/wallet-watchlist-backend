@@ -1,0 +1,104 @@
+// Flyway 10+ split database support into per-engine modules, and the Flyway Gradle
+// plugin loads its engine (flyway-core) on the buildscript classpath. The Postgres
+// module and JDBC driver must live there too, or the plugin reports "No Flyway
+// database plugin found to handle <url>".
+//
+// H2 needs no equivalent module -- Flyway bundles H2 support inside flyway-core --
+// but the H2 JDBC driver still has to be on the buildscript classpath for the
+// local (file database) tasks below.
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.flywaydb:flyway-database-postgresql:${versions.flyway.plugin}"
+        classpath "org.postgresql:postgresql:${versions.postgres.driver}"
+        classpath "com.h2database:h2:${versions.h2.driver}"
+    }
+}
+
+plugins {
+    id 'java-library'
+    // Keep this literal in sync with versions.flyway.plugin (the plugins block
+    // cannot read the versions map). Latest standalone Flyway.
+    id "org.flywaydb.flyway" version "13.0.0"
+}
+
+dependencies {
+    implementation "org.postgresql:postgresql:${versions.postgres.driver}"
+    implementation "com.h2database:h2:${versions.h2.driver}"
+}
+
+def migrationLocations = ['filesystem:src/main/resources/db/migration/main/master']
+
+// ---------------------------------------------------------------------------
+// Local development database (Postgres via local-stack)
+// ---------------------------------------------------------------------------
+// Start the local-stack with: docker compose -f local-stack/docker-compose.yml up -d
+ext.localDbUrl = "jdbc:postgresql://localhost:5450/walletwatchlist"
+ext.localDbUser = 'postgres'
+ext.localDbPassword = 'postgres'
+
+def cleanDb = tasks.register("cleanDb", org.flywaydb.gradle.task.FlywayCleanTask) {
+    locations = migrationLocations
+    url = localDbUrl
+    user = localDbUser
+    password = localDbPassword
+}
+
+def migrateDb = tasks.register("migrateDb", org.flywaydb.gradle.task.FlywayMigrateTask) {
+    locations = migrationLocations
+    url = localDbUrl
+    user = localDbUser
+    password = localDbPassword
+}
+
+// ---------------------------------------------------------------------------
+// CI / integration-test database (real Postgres, via ci-cd/docker-compose.yml)
+// ---------------------------------------------------------------------------
+// Deliberately left on Postgres. Local development moved to H2 for convenience,
+// so these tasks -- and the Testcontainers-backed integration tests -- are what
+// actually prove the schema works on the engine we deploy to.
+def cleanTestDb = tasks.register("cleanTestDb", org.flywaydb.gradle.task.FlywayCleanTask) {
+    locations = migrationLocations
+    url = 'jdbc:postgresql://localhost:5451/walletwatchlist-test'
+    user = 'postgres'
+    password = 'postgres'
+}
+
+def migrateTestDb = tasks.register("migrateTestDb", org.flywaydb.gradle.task.FlywayMigrateTask) {
+    locations = migrationLocations
+    url = 'jdbc:postgresql://localhost:5451/walletwatchlist-test'
+    user = 'postgres'
+    password = 'postgres'
+}
+
+// Note: cleanDbs/migrateDbs span both engines, so the Postgres half still needs
+// the CI stack running. For everyday local work use cleanDb/migrateDb alone.
+tasks.register("cleanDbs") {
+    flyway.cleanDisabled = false
+    dependsOn(cleanDb, cleanTestDb)
+}
+
+tasks.register("migrateDbs") {
+    dependsOn(migrateDb, migrateTestDb)
+}
+
+tasks.register("migrateTestEnv") {
+    dependsOn(migrateTestDb)
+}
+
+
+// Local development seed data (data-seed/local/V*.sql). Applied via Flyway using a
+// SEPARATE history table so it never mixes with the real migration history above.
+def seedLocations = ["filesystem:${rootDir}/data-seed/local"]
+
+tasks.register("seedLocalDb", org.flywaydb.gradle.task.FlywayMigrateTask) {
+    locations = seedLocations
+    url = localDbUrl
+    user = localDbUser
+    password = localDbPassword
+    table = 'flyway_seed_history'   // keep seeds out of flyway_schema_history
+    validateOnMigrate = false       // tolerate edits to dev seed files
+    baselineOnMigrate = true        // schema already holds the migrated tables; init seed history anyway
+}

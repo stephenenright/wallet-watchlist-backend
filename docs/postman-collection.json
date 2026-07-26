@@ -1,0 +1,4264 @@
+{
+  "item": [
+    {
+      "name": "api",
+      "description": "",
+      "item": [
+        {
+          "name": "watched-wallets",
+          "description": "",
+          "item": [
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "6c2e94cd-2a5d-43a1-9296-b77f5c34f7fa",
+                  "name": "Get watched wallet by ID",
+                  "request": {
+                    "name": "Get watched wallet by ID",
+                    "description": {
+                      "content": "Returns a watched wallet by its unique identifier",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Watched wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "359106fb-d9f3-405f-8272-0eae5b58b2a1",
+                      "name": "Successfully retrieved watched wallet",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "c2ac3908-50dc-4baf-9a75-f216ec2a29ce",
+                      "name": "Watched wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "6bcaecaf-49a8-4b55-9006-30f7d1ac85ad",
+                  "name": "Update a watched wallet",
+                  "request": {
+                    "name": "Update a watched wallet",
+                    "description": {
+                      "content": "Updates an existing watched wallet's label or status",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Watched wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "PUT",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"label\": \"<string>\",\n  \"status\": \"PAUSED\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "3e185769-4d09-423d-94e8-121e000f7da3",
+                      "name": "Watched wallet updated successfully",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"<string>\",\n  \"status\": \"PAUSED\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "9cdc6007-fb60-46e2-b734-64a40bb597ec",
+                      "name": "Invalid request or validation failed",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"<string>\",\n  \"status\": \"PAUSED\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "a28705ba-24ca-4784-9bdd-4f2167d9ba5f",
+                      "name": "Watched wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"<string>\",\n  \"status\": \"PAUSED\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "c5898771-b908-4436-a9e5-9aa6901ec20b",
+                  "name": "Delete a watched wallet",
+                  "request": {
+                    "name": "Delete a watched wallet",
+                    "description": {
+                      "content": "Removes a watched wallet entry (does not delete the underlying wallet)",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Watched wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "DELETE",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "45523358-a981-40c7-8ed4-d3b7e605f383",
+                      "name": "Watched wallet deleted successfully",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "d9568884-9c8f-4d65-b0db-52f9768c2f17",
+                      "name": "Watched wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "watched-wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Watched wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            },
+            {
+              "id": "91ef780f-df8d-40a7-8a41-728db629cd7f",
+              "name": "List watched wallets",
+              "request": {
+                "name": "List watched wallets",
+                "description": {
+                  "content": "Returns a paginated list of watched wallets with optional filtering by watcher, wallet, or status",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "watched-wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filter by watcher (user) ID",
+                        "type": "text/plain"
+                      },
+                      "key": "watcherId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filter by wallet ID",
+                        "type": "text/plain"
+                      },
+                      "key": "walletId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filter by watched wallet status (This can only be one of ACTIVE,PAUSED,ARCHIVED)",
+                        "type": "text/plain"
+                      },
+                      "key": "status",
+                      "value": "ARCHIVED"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filter by the wallet status (This can only be one of ACTIVE,DORMANT)",
+                        "type": "text/plain"
+                      },
+                      "key": "walletStatus",
+                      "value": "DORMANT"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "f8e163ac-dc53-416d-908e-4bde759dc352",
+                  "name": "Successfully retrieved watched wallets",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by watcher (user) ID",
+                            "type": "text/plain"
+                          },
+                          "key": "watcherId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by wallet ID",
+                            "type": "text/plain"
+                          },
+                          "key": "walletId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by watched wallet status (This can only be one of ACTIVE,PAUSED,ARCHIVED)",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "ARCHIVED"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by the wallet status (This can only be one of ACTIVE,DORMANT)",
+                            "type": "text/plain"
+                          },
+                          "key": "walletStatus",
+                          "value": "DORMANT"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "37c781e6-113c-47cc-985b-d3d763760f62",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by watcher (user) ID",
+                            "type": "text/plain"
+                          },
+                          "key": "watcherId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by wallet ID",
+                            "type": "text/plain"
+                          },
+                          "key": "walletId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by watched wallet status (This can only be one of ACTIVE,PAUSED,ARCHIVED)",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "ARCHIVED"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by the wallet status (This can only be one of ACTIVE,DORMANT)",
+                            "type": "text/plain"
+                          },
+                          "key": "walletStatus",
+                          "value": "DORMANT"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "f299d3fe-1d4e-4367-818a-87189c9558f3",
+              "name": "Create a watched wallet",
+              "request": {
+                "name": "Create a watched wallet",
+                "description": {
+                  "content": "Creates a new watched wallet linking a user to a wallet they want to watch",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "watched-wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"walletId\": \"<uuid>\",\n  \"watcherId\": \"<uuid>\",\n  \"label\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "8db24049-3c46-4dbe-a987-a36ab7337e95",
+                  "name": "Watched wallet created successfully",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"walletId\": \"<uuid>\",\n  \"watcherId\": \"<uuid>\",\n  \"label\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "ffe38ec5-efdc-496e-a80f-d9f651f52e29",
+                  "name": "Invalid request or validation failed",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"walletId\": \"<uuid>\",\n  \"watcherId\": \"<uuid>\",\n  \"label\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "c6452941-203b-4f12-b026-cb622da26882",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "watched-wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"walletId\": \"<uuid>\",\n  \"watcherId\": \"<uuid>\",\n  \"label\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "wallets",
+          "description": "",
+          "item": [
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "0c83ecaf-8536-4a44-9acd-8cc03bd7ccc6",
+                  "name": "Get wallet by ID",
+                  "request": {
+                    "name": "Get wallet by ID",
+                    "description": {
+                      "content": "Returns detailed wallet information including balances and recent activity",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "beeac00a-5385-464c-80a4-d13c4061597a",
+                      "name": "Successfully retrieved wallet details",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "7858d34b-d631-4bcf-874d-d85a4f888a14",
+                      "name": "Wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "4b656d6c-b155-484a-acb6-c59100534e94",
+                  "name": "Update a wallet",
+                  "request": {
+                    "name": "Update a wallet",
+                    "description": {
+                      "content": "Updates an existing wallet's status and sync information",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "PUT",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"status\": \"ACTIVE\",\n  \"syncStatus\": \"SYNCING\",\n  \"syncRetryCount\": \"<integer>\",\n  \"dateLastSynced\": \"<dateTime>\",\n  \"dateLastActivity\": \"<dateTime>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "15a43384-e8b3-4844-a37f-6bdfe69ecae3",
+                      "name": "Wallet updated successfully",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"status\": \"ACTIVE\",\n  \"syncStatus\": \"SYNCING\",\n  \"syncRetryCount\": \"<integer>\",\n  \"dateLastSynced\": \"<dateTime>\",\n  \"dateLastActivity\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "973464f1-4c4a-43df-b2fc-4fc9ef5bfaee",
+                      "name": "Invalid request or validation failed",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"status\": \"ACTIVE\",\n  \"syncStatus\": \"SYNCING\",\n  \"syncRetryCount\": \"<integer>\",\n  \"dateLastSynced\": \"<dateTime>\",\n  \"dateLastActivity\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "8697707c-d303-4e52-bc9d-960973eae07b",
+                      "name": "Wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "PUT",
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"status\": \"ACTIVE\",\n  \"syncStatus\": \"SYNCING\",\n  \"syncRetryCount\": \"<integer>\",\n  \"dateLastSynced\": \"<dateTime>\",\n  \"dateLastActivity\": \"<dateTime>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                },
+                {
+                  "id": "ea74942e-2850-412a-a7a8-f2ace318323b",
+                  "name": "Delete a wallet",
+                  "request": {
+                    "name": "Delete a wallet",
+                    "description": {
+                      "content": "Deletes a wallet by its unique identifier",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Wallet ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "DELETE",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "98219e1e-cb76-4d5d-b33a-fda0ceab8454",
+                      "name": "Wallet deleted successfully",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "ee9420f6-6fed-42d5-b7a6-f54db7adfdbd",
+                      "name": "Wallet not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "wallets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Wallet ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "DELETE",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            },
+            {
+              "id": "158b5745-4551-428d-a881-823fa5cb343e",
+              "name": "List all wallets",
+              "request": {
+                "name": "List all wallets",
+                "description": {
+                  "content": "Returns a paginated list of wallets with optional filtering by status",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Filter by wallet status (This can only be one of ACTIVE,DORMANT)",
+                        "type": "text/plain"
+                      },
+                      "key": "status",
+                      "value": "ACTIVE"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "9c5f1ca6-7b05-43ea-9a31-0cea51502dab",
+                  "name": "Successfully retrieved wallets",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by wallet status (This can only be one of ACTIVE,DORMANT)",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "DORMANT"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "6f53ce09-1280-4f53-9619-d942be75fa36",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Filter by wallet status (This can only be one of ACTIVE,DORMANT)",
+                            "type": "text/plain"
+                          },
+                          "key": "status",
+                          "value": "DORMANT"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "9c84a5ec-0951-4696-87f0-ce91c477aa25",
+              "name": "Create a new wallet",
+              "request": {
+                "name": "Create a new wallet",
+                "description": {
+                  "content": "Creates a new wallet with the provided address and blockchain",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "wallets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": \"<string>\",\n  \"blockChainId\": \"<uuid>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "c10369cd-600e-4395-a706-0c376ed4ef1e",
+                  "name": "Wallet created successfully",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": \"<string>\",\n  \"blockChainId\": \"<uuid>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "746ac413-63b8-4462-8ca1-de95e29f0d37",
+                  "name": "Invalid request or validation failed",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": \"<string>\",\n  \"blockChainId\": \"<uuid>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "c787b079-0c9c-4295-b48d-902f34fafd4f",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "wallets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"address\": \"<string>\",\n  \"blockChainId\": \"<uuid>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "users",
+          "description": "",
+          "item": [
+            {
+              "id": "7c38afcc-b36c-43ae-bca3-d81977e55eb4",
+              "name": "List all users",
+              "request": {
+                "name": "List all users",
+                "description": {
+                  "content": "Returns a paginated list of all users ordered by last name, first name",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "dcc616ef-7773-46c9-98e3-bb8840e0355f",
+                  "name": "Successfully retrieved users",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "users"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "2dced24b-2f06-4a7f-ab5b-bb48aa25f409",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "users"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "c8808ded-e048-4907-820e-7d59b2fdb6a4",
+              "name": "Create a new user",
+              "request": {
+                "name": "Create a new user",
+                "description": {
+                  "content": "Creates a new user with the provided details",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "59acf7e5-7b23-4015-8e44-c08efc40b7eb",
+                  "name": "User created successfully",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "users"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "64e5e316-9235-4078-a118-3b2672dd3896",
+                  "name": "Invalid request or validation failed",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "users"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "f5084a89-da3d-4b74-9865-4245940e99e2",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "users"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "90b10d6f-aa0d-4c90-87c1-6e393b35e57c",
+                  "name": "Get user by ID",
+                  "request": {
+                    "name": "Get user by ID",
+                    "description": {
+                      "content": "Returns a user by their unique identifier",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "users",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) User ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "72a10a03-2b2a-4e04-b68f-ce1d7401fd03",
+                      "name": "Successfully retrieved user",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "users",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) User ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "397d3a3e-80d7-489f-a477-3b7182056bdd",
+                      "name": "User not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "users",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) User ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "health",
+          "description": "",
+          "item": [
+            {
+              "id": "2562fe85-7956-4c92-87ce-b531786b2976",
+              "name": "health",
+              "request": {
+                "name": "health",
+                "description": {},
+                "url": {
+                  "path": [
+                    "api",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "3c00ce77-7e04-4d2c-babb-4b0ddb597b57",
+                  "name": "OK",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "health"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": \"<string>\",\n  \"key_1\": \"<string>\",\n  \"key_2\": \"<string>\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "413b30d1-bebc-429e-9fa7-6cf8096ffe38",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "health"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ]
+        },
+        {
+          "name": "currencies",
+          "description": "",
+          "item": [
+            {
+              "id": "8236a462-7fe2-4237-9335-f991b7f2206c",
+              "name": "List all currencies",
+              "request": {
+                "name": "List all currencies",
+                "description": {
+                  "content": "Returns a paginated list of all currencies",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "currencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "672458b7-888a-4965-a958-72baf822a55f",
+                  "name": "Successfully retrieved currencies",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "currencies"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "26bc552c-cdc4-4e8e-8f9e-c3073b62df75",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "currencies"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{symbol}",
+              "description": "",
+              "item": [
+                {
+                  "id": "61b6e3ff-2b53-451c-96bf-7bb3ce0331a1",
+                  "name": "Get currency by symbol",
+                  "request": {
+                    "name": "Get currency by symbol",
+                    "description": {
+                      "content": "Returns a currency by its symbol",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "currencies",
+                        ":symbol"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<string>",
+                          "key": "symbol",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Currency symbol",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "dfb74877-e09a-4056-ad16-26929712a388",
+                      "name": "Successfully retrieved currency",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "currencies",
+                            ":symbol"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Currency symbol",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "symbol"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "38970146-bdf2-4d00-9e4d-0519169d863a",
+                      "name": "Currency not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "currencies",
+                            ":symbol"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Currency symbol",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "symbol"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blockchains",
+          "description": "",
+          "item": [
+            {
+              "id": "09727bde-ec4e-4cbe-8e0e-740fc26d492a",
+              "name": "List all blockchains",
+              "request": {
+                "name": "List all blockchains",
+                "description": {
+                  "content": "Returns a paginated list of all supported blockchain networks",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "blockchains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "969a6293-5539-4387-9d9c-17cade01f587",
+                  "name": "Successfully retrieved blockchains",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchains"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "8a6dfd90-70ed-4c1f-82e2-161a89e8aaec",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchains"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "9c920314-3a04-47df-9f7b-793e281f6dba",
+                  "name": "Get blockchain by ID",
+                  "request": {
+                    "name": "Get blockchain by ID",
+                    "description": {
+                      "content": "Returns a blockchain by its unique identifier",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchains",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Blockchain ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "49296728-ca0d-47e1-b2f6-a13fb92e867d",
+                      "name": "Successfully retrieved blockchain",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchains",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "7d9797c8-f2b8-4237-be80-f53e5b4fc493",
+                      "name": "Blockchain not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchains",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            },
+            {
+              "name": "code",
+              "description": "",
+              "item": [
+                {
+                  "name": "{code}",
+                  "description": "",
+                  "item": [
+                    {
+                      "id": "376b7380-9c07-4b9d-ba6e-17044f1f3c5d",
+                      "name": "Get blockchain by code",
+                      "request": {
+                        "name": "Get blockchain by code",
+                        "description": {
+                          "content": "Returns a blockchain by its code",
+                          "type": "text/plain"
+                        },
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchains",
+                            "code",
+                            ":code"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "type": "any",
+                              "value": "<string>",
+                              "key": "code",
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain code",
+                                "type": "text/plain"
+                              }
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                      },
+                      "response": [
+                        {
+                          "id": "61b11043-2b8e-4069-8579-80ab80887a62",
+                          "name": "Successfully retrieved blockchain",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchains",
+                                "code",
+                                ":code"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Blockchain code",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<string>",
+                                  "key": "code"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        },
+                        {
+                          "id": "59ad5bdb-d1fd-41cb-ac30-6cdd0e018af5",
+                          "name": "Blockchain not found",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchains",
+                                "code",
+                                ":code"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Blockchain code",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<string>",
+                                  "key": "code"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        }
+                      ],
+                      "event": [],
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "blockchain-assets",
+          "description": "",
+          "item": [
+            {
+              "id": "fbe8babc-f849-4b4f-bb5b-2b6fdd5d33d8",
+              "name": "List all blockchain assets",
+              "request": {
+                "name": "List all blockchain assets",
+                "description": {
+                  "content": "Returns a paginated list of all blockchain assets (currencies deployed on blockchains)",
+                  "type": "text/plain"
+                },
+                "url": {
+                  "path": [
+                    "api",
+                    "blockchain-assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Page number (1-indexed)",
+                        "type": "text/plain"
+                      },
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Number of items per page",
+                        "type": "text/plain"
+                      },
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {},
+                "auth": null
+              },
+              "response": [
+                {
+                  "id": "7e1be933-83de-4bea-9095-992acbb53e7d",
+                  "name": "Successfully retrieved blockchain assets",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchain-assets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                },
+                {
+                  "id": "4102a814-4cdb-4efe-a068-e36dfdafab1b",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchain-assets"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Page number (1-indexed)",
+                            "type": "text/plain"
+                          },
+                          "key": "page",
+                          "value": "1"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Number of items per page",
+                            "type": "text/plain"
+                          },
+                          "key": "size",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {}
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "*/*"
+                    }
+                  ],
+                  "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "text"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "name": "{id}",
+              "description": "",
+              "item": [
+                {
+                  "id": "e232c9e6-7b99-414a-a3bc-b71682b8e22b",
+                  "name": "Get blockchain asset by ID",
+                  "request": {
+                    "name": "Get blockchain asset by ID",
+                    "description": {
+                      "content": "Returns a blockchain asset by its unique identifier",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchain-assets",
+                        ":id"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "type": "any",
+                          "value": "<uuid>",
+                          "key": "id",
+                          "disabled": false,
+                          "description": {
+                            "content": "(Required) Blockchain asset ID",
+                            "type": "text/plain"
+                          }
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "2b0562f0-3b32-447b-b3ec-2bcd0feeb5f4",
+                      "name": "Successfully retrieved blockchain asset",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain asset ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "0a5cd7b9-4a1f-4535-a894-51d72a7d1289",
+                      "name": "Blockchain asset not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            ":id"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain asset ID",
+                                "type": "text/plain"
+                              },
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "id"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            },
+            {
+              "name": "lookup",
+              "description": "",
+              "item": [
+                {
+                  "id": "0c0b5cbd-91d7-4a36-a6ba-cce12c579ea0",
+                  "name": "Lookup blockchain asset",
+                  "request": {
+                    "name": "Lookup blockchain asset",
+                    "description": {
+                      "content": "Find a blockchain asset by currency+blockchain or by contract address+blockchain",
+                      "type": "text/plain"
+                    },
+                    "url": {
+                      "path": [
+                        "api",
+                        "blockchain-assets",
+                        "lookup"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Currency ID",
+                            "type": "text/plain"
+                          },
+                          "key": "currencyId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Blockchain ID",
+                            "type": "text/plain"
+                          },
+                          "key": "blockchainId",
+                          "value": "<uuid>"
+                        },
+                        {
+                          "disabled": false,
+                          "description": {
+                            "content": "Contract address",
+                            "type": "text/plain"
+                          },
+                          "key": "contractAddress",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "*/*"
+                      }
+                    ],
+                    "method": "GET",
+                    "body": {},
+                    "auth": null
+                  },
+                  "response": [
+                    {
+                      "id": "87267932-2b77-4a3f-8875-361be670385a",
+                      "name": "Successfully retrieved blockchain asset",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            "lookup"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Currency ID",
+                                "type": "text/plain"
+                              },
+                              "key": "currencyId",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Blockchain ID",
+                                "type": "text/plain"
+                              },
+                              "key": "blockchainId",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Contract address",
+                                "type": "text/plain"
+                              },
+                              "key": "contractAddress",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    },
+                    {
+                      "id": "45c3429a-b7c4-4f10-bb99-1ea59f1ebfa2",
+                      "name": "Blockchain asset not found",
+                      "originalRequest": {
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            "lookup"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Currency ID",
+                                "type": "text/plain"
+                              },
+                              "key": "currencyId",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Blockchain ID",
+                                "type": "text/plain"
+                              },
+                              "key": "blockchainId",
+                              "value": "<uuid>"
+                            },
+                            {
+                              "disabled": false,
+                              "description": {
+                                "content": "Contract address",
+                                "type": "text/plain"
+                              },
+                              "key": "contractAddress",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": []
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {}
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "*/*"
+                        }
+                      ],
+                      "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                      "cookie": [],
+                      "_postman_previewlanguage": "text"
+                    }
+                  ],
+                  "event": [],
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  }
+                }
+              ]
+            },
+            {
+              "name": "by-currency",
+              "description": "",
+              "item": [
+                {
+                  "name": "{currencyId}",
+                  "description": "",
+                  "item": [
+                    {
+                      "id": "ac80654d-45c1-4f81-9777-ce7a33e2d98e",
+                      "name": "Get assets by currency",
+                      "request": {
+                        "name": "Get assets by currency",
+                        "description": {
+                          "content": "Returns all blockchain assets for a given currency",
+                          "type": "text/plain"
+                        },
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            "by-currency",
+                            ":currencyId"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "currencyId",
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Currency ID",
+                                "type": "text/plain"
+                              }
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                      },
+                      "response": [
+                        {
+                          "id": "4e887f5a-12d4-4f8d-89d5-162ff19358e3",
+                          "name": "Successfully retrieved blockchain assets",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchain-assets",
+                                "by-currency",
+                                ":currencyId"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Currency ID",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<uuid>",
+                                  "key": "currencyId"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        },
+                        {
+                          "id": "5917a463-2f9a-49b8-a1b5-d8133d212784",
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchain-assets",
+                                "by-currency",
+                                ":currencyId"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Currency ID",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<uuid>",
+                                  "key": "currencyId"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        }
+                      ],
+                      "event": [],
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "by-blockchain",
+              "description": "",
+              "item": [
+                {
+                  "name": "{blockchainId}",
+                  "description": "",
+                  "item": [
+                    {
+                      "id": "edba737c-762a-4f05-b830-0644050e96c2",
+                      "name": "Get assets by blockchain",
+                      "request": {
+                        "name": "Get assets by blockchain",
+                        "description": {
+                          "content": "Returns all assets deployed on a given blockchain",
+                          "type": "text/plain"
+                        },
+                        "url": {
+                          "path": [
+                            "api",
+                            "blockchain-assets",
+                            "by-blockchain",
+                            ":blockchainId"
+                          ],
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "type": "any",
+                              "value": "<uuid>",
+                              "key": "blockchainId",
+                              "disabled": false,
+                              "description": {
+                                "content": "(Required) Blockchain ID",
+                                "type": "text/plain"
+                              }
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "*/*"
+                          }
+                        ],
+                        "method": "GET",
+                        "body": {},
+                        "auth": null
+                      },
+                      "response": [
+                        {
+                          "id": "4bfd8f9d-dbd1-4db1-8c6b-1a81181b4322",
+                          "name": "Successfully retrieved blockchain assets",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchain-assets",
+                                "by-blockchain",
+                                ":blockchainId"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Blockchain ID",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<uuid>",
+                                  "key": "blockchainId"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        },
+                        {
+                          "id": "0f10b133-cbac-49cc-a963-9aa605d660f1",
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "url": {
+                              "path": [
+                                "api",
+                                "blockchain-assets",
+                                "by-blockchain",
+                                ":blockchainId"
+                              ],
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "query": [],
+                              "variable": [
+                                {
+                                  "disabled": false,
+                                  "description": {
+                                    "content": "(Required) Blockchain ID",
+                                    "type": "text/plain"
+                                  },
+                                  "type": "any",
+                                  "value": "<uuid>",
+                                  "key": "blockchainId"
+                                }
+                              ]
+                            },
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "*/*"
+                              }
+                            ],
+                            "method": "GET",
+                            "body": {}
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "*/*"
+                            }
+                          ],
+                          "body": "{\n  \"key_0\": {},\n  \"key_1\": {},\n  \"key_2\": {},\n  \"key_3\": {}\n}",
+                          "cookie": [],
+                          "_postman_previewlanguage": "text"
+                        }
+                      ],
+                      "event": [],
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    }
+  ],
+  "info": {
+    "_postman_id": "062e3374-4ae5-41ec-8048-7799986482e2",
+    "name": "Wallet Watchlist API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for managing blockchain wallet watchlists. Enables users to track wallets across multiple blockchains, view balances, and monitor activity.\n\nContact Support:\n Name: Wallet Watchlist Team",
+      "type": "text/plain"
+    }
+  }
+}

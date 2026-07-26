@@ -1,0 +1,30 @@
+name: "walletwatchlist-local-stack"
+
+services:
+  db-postgres:
+    image: postgres:16-alpine
+    container_name: walletwatchlist-postgres-local
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=walletwatchlist
+      - LC_COLLATE=en_US.UTF-8
+      - LC_CTYPE=en_US.UTF-8
+    ports:
+      - '5450:5432'
+    volumes:
+      - walletwatchlist-postgres-data:/var/lib/postgresql/data
+    networks:
+      - walletwatchlist
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d walletwatchlist"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  walletwatchlist-postgres-data:
+
+networks:
+  walletwatchlist:
+    driver: bridge

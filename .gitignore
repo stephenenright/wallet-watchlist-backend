@@ -1,0 +1,32 @@
+target/
+build/
+!.mvn/wrapper/maven-wrapper.jar
+tmlog*
+logs/
+.gradle/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### MAC ###
+.DS_Store
+
+# NPM
+node_modules/
+build
+.npm/
+npm-debug.log*
+.env.local
+
+# H2 database files (in user home ~/.walletwatchlist/db/)
