@@ -1,8 +1,8 @@
 # Running and Testing the API
 
 ## Start the API
-The application is packaged as a fat jar file which includes the java runtime required to execute the api.
-It will also write to and read from an h2 file based database output to this directory.
+The application is packaged as a fat JAR file which includes the Java runtime required to execute the API.
+It will also write to and read from an H2 file-based database in this directory.
 
 To run the app from a Linux or macOS terminal:
 
@@ -24,6 +24,6 @@ http://localhost:8081/swagger-ui/index.html
 
 
 ## Postman collection
-A postman collection to test the API's can also be found here:
+A Postman collection to test the APIs can also be found here:
 
 [postman-collection.json](../docs/postman-collection.json)

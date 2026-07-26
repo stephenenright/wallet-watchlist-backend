@@ -1,7 +1,7 @@
 # wallet-watchlist-backend
 A sample backend for a wallet watchlist application. The functionality currently implemented is:
 
-The functionality is based of the requirements in this assignment.
+The functionality is based on the requirements in this assignment.
 [Backend_Home_Task.pdf](Backend_Home_Task.pdf)
 
 
@@ -11,7 +11,7 @@ the instructions found here:
 [README.md](bin/README.md)
 
 
-## ScreenRecording of the functionality.
+## Screen Recording of the Functionality
 
 
 
@@ -32,11 +32,13 @@ the instructions found here:
 | Currencies | http://localhost:8081/api/currencies | Currency management |
 | Blockchains | http://localhost:8081/api/blockchains | Blockchain network management |
 | Blockchain Assets | http://localhost:8081/api/blockchain-assets | Assets deployed on blockchains |
+| Wallets | http://localhost:8081/api/wallets | Wallet management |
+| Watched Wallets | http://localhost:8081/api/watched-wallets | User watched wallet management |
 | Health Check | http://localhost:8081/api/health | Service health status |
 
 
 
-## Architecture Descions and tradeoffs.
+## Architecture Decisions and Tradeoffs
 * A Monolithic application was chosen due to the short time frame to implement the assignment.
 * In a real application we can see this as a microservice architecture with different services for:
   * Auth
@@ -45,12 +47,12 @@ the instructions found here:
   * Asset Management
   * User Registration
   * Wallet Sync Service.
-* Since we can split the application into different services in the future we have created separate package for that possibility.
+* Since we can split the application into different services in the future, we have created separate packages for that possibility.
 * I made a design decision to store the wallet balance and most recent transactions history, to have a snapshot of data. This is also used to mock new wallets.
 * In a real application we can use a blockchain indexer to view more of the data from the wallet frontend, but also cache balances and recent transactions.
 * We have omitted background / cron jobs since they are not required for the assignment. The background jobs can also be used to sync a cached subset of data.
-* Sorting and filtering is not supported on the API's.
-* Dor flexible filtering we can use RSQL.https://github.com/jirutka/rsql-parser and integrate that with JPA to automatically generate the queries.
+* Sorting and filtering are not supported on the APIs.
+* For flexible filtering, we can use RSQL (https://github.com/jirutka/rsql-parser) and integrate it with JPA to automatically generate the queries.
 * We could consider soft delete in the future for wallets.
 * The Wallet and the WatchedWallet are stored in different models as a wallet could be watched by many users.
 * We can support a watcher (user) watching a subset of assets in the future.
